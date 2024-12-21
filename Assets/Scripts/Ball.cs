@@ -15,8 +15,10 @@ public class Ball : MonoBehaviour
     private Transform grabPosition;
     [SerializeField]
     private GameObject ballLineRenderer;
-    [SerializeField]
-    private FixedJoint2D fixedJoint;
+    #endregion
+
+    #region PRIVATE FIELDS
+    bool onShoot = false;
     #endregion
 
     #region PRIVATE FIELDS
@@ -26,26 +28,53 @@ public class Ball : MonoBehaviour
     #region MONO BEHAVIOURS
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Q) && fixedJoint.enabled == true)
+        if (Input.GetKeyUp(KeyCode.Q)
+        )
         {
+            onShoot = true;
             transform.parent = null;
-            fixedJoint.enabled = false;
+            gameObject.AddComponent<Rigidbody2D>();
             Shoot();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
+
         if (col.gameObject.tag == "ragdollHand")
         {
-            if (fixedJoint != null)
+            if (!onShoot)
             {
+                Destroy(GetComponent<Rigidbody2D>());
                 transform.parent = grabPosition;
                 transform.localPosition = Vector3.zero;
                 transform.localRotation = Quaternion.identity;
-                fixedJoint.enabled = true;
             }
         }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "net")
+        {
+            onShoot = false;
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "ragdollHand")
+        {
+            if (!onShoot)
+            {
+                Destroy(GetComponent<Rigidbody2D>());
+                transform.parent = grabPosition;
+                transform.localPosition = Vector3.zero;
+                transform.localRotation = Quaternion.identity;
+            }
+        }
+
     }
     #endregion
 

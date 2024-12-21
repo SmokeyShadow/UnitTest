@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 7857281397129546945}
   - component: {fileID: 7857281397129546940}
   - component: {fileID: 7857281397129546947}
-  - component: {fileID: 7857281397129546946}
-  - component: {fileID: 1280679061280355806}
+  - component: {fileID: 8663186842938840376}
   - component: {fileID: 1280679061280355805}
   m_Layer: 0
   m_Name: Ball
@@ -29,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7857281397129546944}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.34, y: -0.71999997, z: 0}
+  m_LocalPosition: {x: -1.3400002, y: -0.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -105,7 +104,7 @@ CircleCollider2D:
   m_Offset: {x: -0.00000095222305, y: 0.022231761}
   serializedVersion: 2
   m_Radius: 0.4727682
---- !u!50 &7857281397129546946
+--- !u!50 &8663186842938840376
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -126,24 +125,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!255 &1280679061280355806
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7857281397129546944}
-  m_Enabled: 0
-  serializedVersion: 4
-  m_EnableCollision: 1
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.000000095993094, y: -0.5899999}
-  m_DampingRatio: 0
-  m_Frequency: 0
 --- !u!114 &1280679061280355805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +140,6 @@ MonoBehaviour:
   sideNet: {fileID: 0}
   grabPosition: {fileID: 0}
   ballLineRenderer: {fileID: 8993487380080459469}
-  fixedJoint: {fileID: 1280679061280355806}
 --- !u!1 &8993487380080459469
 GameObject:
   m_ObjectHideFlags: 0

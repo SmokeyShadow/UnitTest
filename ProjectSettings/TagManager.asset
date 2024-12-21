@@ -6,11 +6,12 @@ TagManager:
   tags:
   - IgnoreMe
   - ragdollHand
+  - ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 

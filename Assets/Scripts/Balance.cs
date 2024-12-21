@@ -19,4 +19,11 @@ public class Balance : MonoBehaviour
         rigidBody.MoveRotation(Mathf.LerpAngle(rigidBody.rotation, targetRotation, force * Time.fixedDeltaTime));
     }
     #endregion
+
+    #region PUBLIC METHODS
+    public void SetTargetRotation(float target)
+    {
+        targetRotation = target;
+    }
+    #endregion
 }
